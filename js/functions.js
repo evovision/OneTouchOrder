@@ -144,6 +144,30 @@ $(document).on('pagebeforeshow', function() {
 			changePage("choose.html");
 
 		});
+
+		var mains_count = 0;
+		$.each(menu['mains'], function(idx, category){
+			mains_count += category.prod_cat.length;
+		});
+
+		var sides_count = 0;
+		$.each(menu['sides'], function(idx, category){
+			sides_count += category.prod_cat.length;
+		});
+		var desserts_count = 0;
+		$.each(menu['desserts'], function(idx, category){
+			desserts_count += category.prod_cat.length;
+		});
+		var drinks_count = 0;
+		$.each(menu['drinks'], function(idx, category){
+			drinks_count += category.prod_cat.length;
+		});
+
+		$('#mains_count').html(mains_count);
+		$('#sides_count').html(sides_count);
+		$('#desserts_count').html(desserts_count);
+		$('#drinks_count').html(drinks_count);
+
 		$('[id^=basket]').on("click", function(){
 			changePage("orders.html");
 		});
@@ -244,7 +268,6 @@ $(document).on('pagebeforeshow', function() {
 			//check for existence
 			if(basketItem) {
 				increaseQty(basketItem);
-				basketItem.qty += 1;
 				$(".orderBtn").hide();
 				$(".quantity").show();
 				$("#count").html(basketItem.qty);
@@ -259,18 +282,16 @@ $(document).on('pagebeforeshow', function() {
 				$(".quantity").show();
 				$("#count").html(basketItem.qty);
 			}
-			console.log(basket);
+			updateCartList();
 			$("body").trigger( "basket:updated" );
 		});
 		$(".removeItem").on("click", function(){
-			decreaseQty(basketItem);
-			if(basketItem.qty > 0){
-				$("#count").html(basketItem.qty);
-			}else{
-				$(".orderBtn").show();
-				$(".quantity").hide();
+			if(basketItem.qty > 1){
+				decreaseQty(basketItem);
 				$("#count").html(basketItem.qty);
 			}
+			updateCartList();
+
 
 		});
 

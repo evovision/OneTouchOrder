@@ -31,7 +31,7 @@
             </div>
             <div class="ui-block-b quantity">
                 <div class="ui-grid-b">
-                    <div class="ui-block-a"><a href="#"><i class="fa fa-minus"></i></a></div>
+                    <div class="ui-block-a"><a href="#" class="removeItem"><i class="fa fa-minus"></i></a></div>
                     <div class="ui-block-b number">x<span id="count"></span></div>
                     <div class="ui-block-c"><a href="#" class="addItem"><i class="fa fa-plus"></i></a></div>
                 </div>
@@ -107,7 +107,7 @@
          (c) 2013 @ElmahdiMahmoud - fikra-masri.by
          license: http://www.opensource.org/licenses/mit-license.php
          */
-        $('#addItem').on('click', function () {
+        $('.addItem').on('click', function () {
             var cart = $('#basket_icon');
             var imgtodrag = $('.imgContainer').find("img").eq(0);
             if (imgtodrag) {
