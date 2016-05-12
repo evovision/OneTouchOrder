@@ -243,6 +243,7 @@ $(document).on('pagebeforeshow', function() {
 		$(".addItem").on("click", function () {
 			//check for existence
 			if(basketItem) {
+				increaseQty(basketItem);
 				basketItem.qty += 1;
 				$(".orderBtn").hide();
 				$(".quantity").show();
@@ -261,9 +262,17 @@ $(document).on('pagebeforeshow', function() {
 			console.log(basket);
 			$("body").trigger( "basket:updated" );
 		});
+		$(".removeItem").on("click", function(){
+			decreaseQty(basketItem);
+			if(basketItem.qty > 0){
+				$("#count").html(basketItem.qty);
+			}else{
+				$(".orderBtn").show();
+				$(".quantity").hide();
+				$("#count").html(basketItem.qty);
+			}
 
-
-
+		});
 
 	}else if(currentPage == "orders") {
 		$("[id^=titleText]").text(lang.orders.title);
