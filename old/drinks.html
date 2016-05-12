@@ -1,0 +1,30 @@
+<!-- drinks page -->
+<div data-role="page" id="drinksPage">
+    <div data-role="header" data-position="fixed" class="header-box" data-tap-toggle="false" data-hide-during-focus=""> 
+            <a href="" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all back">Back</a>
+			<h1 id="drinksHeaderText"></h1>
+            <a href="" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all home">Home</a> 
+    </div><!-- /header -->
+    <div role="main"  class="ui-content" style="padding:1em;">
+		<div id="drinksList"></div> <!-- dinksList finish -->
+		<div class="ok-fixed" data-role="footer" data-position="fixed" style="display: block !important; left: 0 !important;right: 0 !important;width: 100% !important;position: fixed !important;z-index: 1000 !important;">
+			<div class="ui-grid-solo">
+				<!-- <div class="ui-block-a white"><a href="" id="foodButtonDrinks" class="btn ui-btn ui-btn-inline">MANCARE</a></div> -->
+				<div class="ui-block-a white"><a href="" id="addDrinks" class="btn ui-btn ui-btn-inline"></a></div>
+			</div><!-- /navbar -->
+		</div>
+    </div><!-- /content -->
+	<!-- error popup start -->
+	<div data-role="popup" data-close-btn="none" id="drinksErrorPopup">
+		<div data-role="header">
+			<h1 id="drinksInfoText"></h1>
+		</div><!-- /header -->
+		<div role="main" class="ui-content" style="padding:10px; text-align:center;">
+			<p id="drinksInfoMessageText"></p>
+			<p>
+				<a href="#" id="drinksError" class="ui-btn ui-shadow ui-corner-all ui-btn-inline"></a>
+			</p>
+		</div>
+	</div>
+	<!-- error popup finish -->
+</div><!-- /page drinks -->

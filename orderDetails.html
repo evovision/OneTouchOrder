@@ -1,0 +1,149 @@
+<div data-role="page" id="orderDetails">
+
+    <div data-role="header" data-position="fixed" data-fullscreen="true" data-theme="b">
+        <a href="#" data-rel="back" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext ui-btn-left" data-role="button" role="button">Back</a>
+        <h1 id="product_title"></h1>
+        <a href="#" class="basket" id="basket_icon">
+            <img src="img/new/basket.png" alt="" width="20" height="20"/>
+            <span class="ordersNo" style="display:none;"></span>
+        </a>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+        <div class="imgContainer" style="display:none;">
+            <div class="vhCenter">
+                <img class="product_img" src=""/>
+            </div>
+            <div class="captions">
+                <div class="label" id="product_label"></div>
+                <div class="price" id="product_price"></div>
+            </div>
+        </div>
+    </div><!-- /content -->
+
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-grid-a" id="btns">
+            <div class="ui-block-a recommend">
+                <a href="#"><i class="fa fa-star-o"></i><span id="share"></span></a>
+            </div>
+            <div class="ui-block-b orderBtn">
+                <a href="#" class="addItem"><img src="img/new/basket.png" alt="" /><span id="orderitem"></span></a>
+            </div>
+            <div class="ui-block-b quantity">
+                <div class="ui-grid-b">
+                    <div class="ui-block-a"><a href="#"><i class="fa fa-minus"></i></a></div>
+                    <div class="ui-block-b number">x<span id="count"></span></div>
+                    <div class="ui-block-c"><a href="#" class="addItem"><i class="fa fa-plus"></i></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-grid-solo">
+            <div class="ui-block-a infoText" id="infoText">
+
+            </div>
+        </div>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="main.html" id="menu" data-icon="menu" class="custom-btn"><span id="menuText"></span></a></li>
+                <li><a href="#" id="openWaiterPopUp" data-icon="waiter" class="custom-btn" data-rel="popup" data-transition="pop"><span id="callWaiterText"></span></a></li>
+                <li><a href="#" id="basket" data-icon="order" class="custom-btn"><span id="orderText"></span></a></li>
+                <li><a href="#" id="check"  data-icon="bill" class="custom-btn"><span id="checkText"></span></a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+    <!-- calling waiter popup start -->
+    <div data-role="popup"  data-close-btn="none"  id="waiterPopUp">
+        <div data-role="header">
+            <h1 id="callWaiterHeaderText"></h1>
+            <!-- <h1 id="callWaiterHeaderTeaxt">Cheama un ospatar</h1> -->
+        </div><!-- /header -->
+        <div role="main" class="ui-content" style="padding:10px; text-align:center;">
+            <!-- <p>Un ospatar va ajunge la dumneavoastra in cel mai scurt timp.</p> -->
+            <p id="callWaiterMessageText"></p>
+            <p><a href="#main" id="calling" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left"></a></p>
+        </div><!-- /content -->
+    </div>
+    <!-- calling waiter popup start -->
+    <script>
+        $('#orderDetails').on('pageshow', function (event) {
+
+            //on display
+            var w = window.innerHeight;
+            var b = $('#btns').outerHeight();
+            var f = $('.ui-footer').outerHeight() - 2;
+            $('.imgContainer').height(w - (b + f));
+
+            //container
+            var cW = $('.imgContainer').width();
+            var cH = $('.imgContainer').height(w - (b + f));
+
+            //image
+            var imgW = $('.imgContainer img').width();
+            var imgH = $('.imgContainer img').height();
+
+            if (imgW >= imgH){
+                $('.imgContainer img').width(cW);
+                $('.imgContainer').show();
+            } else {
+                $('.imgContainer img').height(cH);
+                $('.imgContainer').show();
+            }
+        });
+
+        //on resize
+        window.onresize = function (event) {
+            var w = window.innerHeight;
+            var b = $('#btns').outerHeight();
+            var f = $('.ui-footer').outerHeight() - 2;
+
+            $('.imgContainer').height(w - (b + f));
+        };
+    </script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        /*
+         Add to cart fly effect with jQuery. - May 05, 2013
+         (c) 2013 @ElmahdiMahmoud - fikra-masri.by
+         license: http://www.opensource.org/licenses/mit-license.php
+         */
+        $('#addItem').on('click', function () {
+            var cart = $('#basket_icon');
+            var imgtodrag = $('.imgContainer').find("img").eq(0);
+            if (imgtodrag) {
+                var imgclone = imgtodrag.clone()
+                        .offset({
+                            top: imgtodrag.offset().top,
+                            left: imgtodrag.offset().left
+                        })
+                        .css({
+                            'opacity': '0.5',
+                            'position': 'absolute',
+                            'height': '150px',
+                            'width': '150px',
+                            'z-index': '100'
+                        })
+                        .appendTo($('body'))
+                        .animate({
+                            'top': cart.offset().top + 10,
+                            'left': cart.offset().left + 10,
+                            'width': 75,
+                            'height': 75
+                        }, 1000, 'easeInOutExpo');
+
+                setTimeout(function () {
+                    cart.effect("shake", {
+                        times: 2
+                    }, 200);
+                }, 1500);
+
+                imgclone.animate({
+                    'width': 0,
+                    'height': 0
+                }, function () {
+                    $(this).detach();
+                });
+            }
+        });
+    </script>
+</div>

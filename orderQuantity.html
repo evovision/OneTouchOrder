@@ -1,0 +1,99 @@
+<div data-role="page" id="orderQuantity">
+
+    <div data-role="header" data-position="fixed" data-fullscreen="true" data-theme="b">
+        <a href="choose.html" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext ui-btn-left" data-role="button" role="button">Back</a>
+        <h1>Friptura de vita</h1>
+        <a href="orders.html" class="basket">
+            <img src="img/new/basket.png" alt="" width="20" height="20"/>
+            <span class="ordersNo">50</span>
+        </a>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <img src="img/new/deserts.png" />
+                </li>
+                <li>
+                    <img src="img/new/main.png" />
+                </li>
+                <li>
+                    <img src="img/new/foto1.png" />
+                </li>
+            </ul>
+            <div class="captions">
+                <div class="label">
+                    Vita, sos, cartofi
+                </div>
+                <div class="price">25.00 LEI</div>
+            </div>
+        </div><!-- /flexslider -->
+    </div><!-- /content -->
+
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-grid-a" id="btns">
+            <div class="ui-block-a recommend">
+                <a href="#"><i class="fa fa-star-o"></i><span> RECOMANDĂ</span></a>
+            </div>
+            <div class="ui-block-b quantity">
+                <div class="ui-grid-b">
+                    <div class="ui-block-a"><a href="#"><i class="fa fa-minus"></i></a></div>
+                    <div class="ui-block-b number">x 2</div>
+                    <div class="ui-block-c"><a href="#"><i class="fa fa-plus"></i></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-grid-solo">
+            <div class="ui-block-a infoText">
+                Acest produs a fost recomandat de 100 de ori
+            </div>
+        </div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="" id="menu" data-icon="menu" class="custom-btn">Meniu<span id="menuText"></span></a></li>
+                <li><a href="" id="openWaiterPopUp" data-icon="waiter" class="custom-btn" data-rel="popup" data-transition="pop">Ospătar<span id="callWaiterText"></span></a></li>
+                <li><a href="" id="basket" data-icon="order" class="custom-btn">Comenzi<span id="orderText"></span></a></li>
+                <li><a href="" id="check"  data-icon="bill" class="custom-btn">Nota<span id="checkText"></span></a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+    <!-- calling waiter popup start -->
+    <div data-role="popup"  data-close-btn="none"  id="waiterPopUp">
+        <div data-role="header">
+            <h1 id="callWaiterHeaderText"></h1>
+            <!-- <h1 id="callWaiterHeaderTeaxt">Cheama un ospatar</h1> -->
+        </div><!-- /header -->
+        <div role="main" class="ui-content" style="padding:10px; text-align:center;">
+            <!-- <p>Un ospatar va ajunge la dumneavoastra in cel mai scurt timp.</p> -->
+            <p id="callWaiterMessageText"></p>
+            <p><a href="#main" id="calling" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left"></a></p>
+        </div><!-- /content -->
+    </div>
+    <!-- calling waiter popup start -->
+    <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+    <script>
+        $('#orderQuantity').on('pageshow', function (event) {
+            $('.flexslider').flexslider({
+                animation: "slide"
+            });
+
+            //on display
+            var w = window.innerHeight;
+            var b = $('#btns').outerHeight();
+            var f = $('.ui-footer').outerHeight();
+            $('.flexslider .slides img').height(w-(b+f)+57);
+            $('.flexslider').height(w-(b+f));
+        });
+
+        //on resize
+        window.onresize = function(event) {
+            var w = window.innerHeight;
+            var b = $('#btns').outerHeight();
+            var f = $('.ui-footer').outerHeight();
+            $('.flexslider .slides img').height(w-(b+f)+57);
+            $('.flexslider').height(w-(b+f));
+        };
+    </script>
+</div>
+

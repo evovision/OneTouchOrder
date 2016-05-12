@@ -1,0 +1,119 @@
+<!-- basket page start -->
+<div data-role="page" id="basketPage">
+    <div data-role="header" data-position="fixed" class="header-box" data-tap-toggle="false" data-hide-during-focus=""> 
+           <a href="" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-corner-all back" >Back</a>
+            <!-- <h1 id="basketHeaderText">Comanda Ta</h1> -->
+			 <h1 id="basketHeaderText"></h1>
+            <a href="" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all home">Home</a> 
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content" style="padding:5px;">
+	<style>
+		table{
+			border-collapse: collapse;
+			margin-top:-20px;
+			margin-bottom:2em;
+		}
+
+		th,td {
+			border-bottom: 1px solid #d6d6d6;
+			vertical-align: middle;
+			line-height:3.5em;
+			padding:5px;
+			
+		}
+
+		tr:nth-child(even) {
+			background: #e9e9e9;	
+		}
+
+		th,td {
+			min-width:1em;
+		}
+
+		td {
+			text-align:center;
+		}
+
+		.td-col{
+			text-align:left;
+		}
+		table img{
+			  height: 38px;
+			  margin-top: 1em;
+		}
+		table p{
+			line-height: 1.2em;
+		}
+	</style>
+	<table  width="100%">
+	  <thead>
+	    <tr style="background-color:#EEE;">
+		  <th data-priority="1" width="15%"></th>
+	      <th id="basketProduct" data-priority="2" width="40%" style="text-align: left;"></th>
+	      <th  id="basketQuantity" data-priority="3" width="15%"></th>
+	      <th id="basketPU" data-priority="4" width="15%"></th>
+	      <th id="basketPT" data-priority="5" width="15%"></th>
+	    </tr>
+	  </thead>
+	  <tbody class="add-comenzi" id="addProducts"> 
+	  </tbody>
+	</table>
+		<!-- <p><a href="#" id="resetBill" class="ui-btn ui-shadow ui-corner-all">STERGE TOATE PRODUSELE</a></p> -->
+		<label id="addinfoLabel" for="addinfo"></label>
+		<textarea name="addinfo" id="addinfo"></textarea>
+		
+    </div><!-- /content -->
+	<div class="ok-fixed" data-role="footer" data-position="fixed" style="display: block !important; left: 0 !important;right: 0 !important; width: 100% !important;position: fixed !important;z-index: 1000 !important;">
+		<div class="ui-grid-b">
+				<div class="ui-block-a white"><a href="" id="foodButton" class="btn ui-btn ui-btn-inline"></a></div>
+				<div class="ui-block-b white"><a href="" id="openSendOrderPopUp" data-transition="pop" class="btn ui-btn ui-btn-inline"></a></div>
+				<div class="ui-block-c white"><a href="" id="drinksButton" class="btn ui-btn ui-btn-inline"></a></div>
+		</div><!-- /navbar -->
+	</div>
+	<!-- send order popup start -->
+	<div data-role="popup" data-close-btn="none" id="sendOrderPopUp">
+		<div data-role="header">
+			<h1 id="sendOrderHeaderText"></h1>
+		</div><!-- /header -->
+		<div role="main" class="ui-content" style="padding:10px; text-align:center;">
+			<p id="sendOrderText"></p>
+			<p>
+				<a href="#" id="sendOrder" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-check ui-btn-icon-left"></a>
+				<a href="#" id="notSendOrder" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-delete ui-btn-icon-left"></a>
+			</p>
+		</div>
+	</div>
+	<!-- send order popup finish -->
+	<!-- info popup start -->
+	<div data-role="popup" data-close-btn="none" id="infoPopUp">
+		<div data-role="header">
+			<h1 id="infoPopUpHeaderText"></h1>
+		</div><!-- /header -->
+		<div role="main" class="ui-content" style="padding:10px; text-align:center;">
+			<p id="infoPopUpText"></p>
+			<p>
+				<a href="#" id="infoOrder" class="ui-btn ui-shadow ui-corner-all ui-btn-inline"></a>
+			</p>
+		</div>
+	</div>
+	<!-- info popup finish -->
+	<!-- error popup start -->
+	<div data-role="popup" data-close-btn="none" id="errorOrderPopUp">
+		<div data-role="header">
+			<h1 id="errorOrderPopUpHeaderText"></h1>
+		</div><!-- /header -->
+		<div role="main" class="ui-content" style="padding:10px; text-align:center;">
+			<p id="errorOrderPopUpText"></p>
+			<p>
+				<a href="#" id="errorOrder" class="ui-btn ui-shadow ui-corner-all ui-btn-inline"></a>
+				<a href="#" id="errorOrderCancel" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-delete ui-btn-icon-left"></a>
+			</p>
+		</div>
+	</div>
+	<!-- error popup finish -->
+	
+</div>
+<!-- basket page finish -->
+
+

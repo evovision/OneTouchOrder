@@ -1,0 +1,31 @@
+<!-- food page -->
+<div data-role="page" id="foodPage" >
+    <div data-role="header" data-position="fixed" class="header-box" data-tap-toggle="false" data-hide-during-focus="" style="max-height: 40px; bottom: 0px; border-bottom: 1px solid black;"> 
+        <a href="" class="ui-btn ui-icon-carat-l ui-btn-icon-notext back" style="background-color: black; border-color: black; height:30px;">Back</a>
+		<h1 id="foodHeaderText" style="color: white; height:20px;"></h1>
+        <a href="" class="ui-btn ui-icon-home ui-btn-icon-notext home" style="background-color: black; border-color: black; height:30px;">Home</a> 
+    </div><!-- /header -->
+    <div role="main" class="ui-content">
+		<div id="foodList"></div> <!-- dinksList finish -->
+		<p id="allergens" style="padding: 1em;"></p>
+		<div class="ok-fixed" data-role="footer" data-position="fixed" style="display: block !important; left: 0 !important;right: 0 !important;width: 100% !important;position: fixed !important;z-index: 1000 !important;">
+			<div class="ui-grid-solo">
+				<!-- <div class="ui-block-a white"><a href="" id="drinksButtonFood" class="btn ui-btn ui-btn-inline">BAUTURA</a></div> -->
+				<div class="ui-block-a white"><a href="" id="addFood" class="btn ui-btn ui-btn-inline"></a></div>
+			</div><!-- /navbar -->
+		</div>
+    </div><!-- /content -->
+	<!-- error popup start -->
+	<div data-role="popup" data-close-btn="none" id="foodErrorPopup">
+		<div data-role="header">
+			<!-- <h1 id="foodInfoText">Info</h1> -->
+			<h1 id="foodInfoText"></h1>
+		</div><!-- /header -->
+		<div role="main" class="ui-content" style="padding:10px; text-align:center;">
+			<p id="foodInfoMessageText"></p>
+			<p>
+				<a href="#" id="foodError" class="ui-btn ui-shadow ui-corner-all ui-btn-inline"></a>
+			</p>
+		</div>
+	</div>
+</div>

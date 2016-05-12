@@ -1,0 +1,100 @@
+<div data-role="page" id="main">
+    <div role="main" class="ui-content">
+        <div class="ui-grid-b main-top-bar">
+            <div class="ui-block-a restLogo"><img id="restLogo" src="img/new/logo-top.png" alt="Logo restaurant"/></div>
+            <div class="ui-block-b restInfo">
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a rest-name"></div>
+                </div>
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a rest-motto"></div>
+                </div>
+            </div>
+        </div>
+        <div id="mainContent" style="display:none;">
+            <div class="ui-grid-solo mains">
+                <div class="ui-block-a menu_type" data-type="mains">
+                    <img src="img/new/main.png" alt="" />
+                    <div class="captions">
+                        <div class="label">Feluri principale</div>
+                        <div class="price">25</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-a others">
+                <div class="ui-block-a drinks menu_type" data-type="drinks">
+                    <img src="img/new/drinks.png" alt="" />
+                    <div class="captions">
+                        <div class="label">Băutură</div>
+                        <div class="price">90</div>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-grid-solo desserts">
+                        <div class="ui-block-a menu_type" data-type="desserts">
+                            <img src="img/new/deserts.png" alt="" />
+                            <div class="captions">
+                                <div class="label">Desert</div>
+                                <div class="price">24</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-grid-solo sides">
+                        <div class="ui-block-a menu_type" data-type="sides">
+                            <img src="img/new/side.png" alt="" />
+                            <div class="captions">
+                                <div class="label">Garnituri</div>
+                                <div class="price">24</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /content -->
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="main.html" id="menu" data-icon="menu" class="custom-btn"><span id="menuText"></span></a></li>
+                <li><a href="" id="openWaiterPopUp" data-icon="waiter" class="custom-btn" data-rel="popup" data-transition="pop"><span id="callWaiterText"></span></a></li>
+                <li><a href="" id="basket" data-icon="order" class="custom-btn"><span id="orderText"></span></a></li>
+                <li><a href="#" id="check"  data-icon="bill" class="custom-btn"><span id="checkText"></span></a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+
+    <!-- calling waiter popup start -->
+    <div data-role="popup"  data-close-btn="none"  id="waiterPopUp">
+        <div data-role="header">
+            <h1 id="callWaiterHeaderText"></h1>
+            <!-- <h1 id="callWaiterHeaderTeaxt">Cheama un ospatar</h1> -->
+        </div><!-- /header -->
+        <div role="main" class="ui-content" style="padding:10px; text-align:center;">
+            <!-- <p>Un ospatar va ajunge la dumneavoastra in cel mai scurt timp.</p> -->
+            <p id="callWaiterMessageText"></p>
+            <p><a href="#main" id="calling" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left"></a></p>
+        </div><!-- /content -->
+    </div>
+    <!-- calling waiter popup start -->
+    <script>
+        $('#main').on('pageshow', function (event) {
+
+            //on display
+            var w = window.innerHeight;
+            var h = $('.main-top-bar').outerHeight();
+            var f = $('.ui-footer').outerHeight() - 2;
+            $('#mainContent').height(w - h - f);
+            $('#mainContent').show();
+        });
+
+        //on resize
+        window.onresize = function (event) {
+            var w = window.innerHeight;
+            var h = $('.main-top-bar').outerHeight();
+            var f = $('.ui-footer').outerHeight() - 2;
+            $('#mainContent').height(w - h - f);
+        };
+    </script>
+</div>
+

@@ -1,0 +1,42 @@
+<div data-role="page" id="orders">
+
+    <div data-role="header" data-position="fixed" data-theme="b">
+        <a href="main.html" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext ui-btn-left" data-role="button" role="button">Back</a>
+        <h1 id="titleText"></h1>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+        <ul style="display:none;">
+            <li data-icon="false" id="cart_item_template" style="display:none;">
+                <div class="thumbContainer">
+                    <img src="img/new/orders/1.png" class="cart_item_photo thumb">
+                </div>
+                <div class="marginLeft">
+                    <h2 class="cart_item_name"></h2>
+                    <p class="cat cart_item_category"></p>
+                    <div class="pricePerUnit cart_item_price"></div>
+                    <div class="minusPlus">
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a cart_item_decrease" ><i class="fa fa-minus"></i></div>
+                            <div class="ui-block-b cart_item_increase" ><i class="fa fa-plus"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <ul data-role="listview" id="cart_list" data-inset="true">
+
+        </ul>
+    </div><!-- /content -->
+
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-grid-solo" href="#">
+            <div class="ui-block-a payBtn">
+                <div class="label" id="orderText"></div>
+                <div class="price"></div>
+            </div>
+        </div>
+    </div><!-- /footer -->
+
+</div>

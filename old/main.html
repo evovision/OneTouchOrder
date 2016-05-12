@@ -1,0 +1,58 @@
+<div data-role="page" id="main" style="background-image:url(img/backlogin.jpg);background-size:cover;background-position:center;text-align:center;">
+	<div role="main" class="ui-content no-header" >
+        <br>
+           <img id="restLogo" class="img" src="" alt="Restaurant" width="35%" /><br /><br />
+		<div class='square-box' style="float:left;">
+			<a id="menu" href="">
+			<div class='square-content'><br />
+				<img src="img/open207.png" width="50%" alt="" style="opacity:0.5;"/><br /><br />
+				<span id="menuText"></span>
+				<!--  <span id="menuText">Menu</span> -->
+			</div>
+			</a>
+		</div>
+		<div class='square-box' style="float:right;">
+			<a href="" id="basket">
+				<div class='square-content'><br /><img src="img/line8.png" width="50%" alt=""  style="opacity:0.5;"/>
+					<br /><br />
+					<!-- <span>Comanda ta</span> -->
+					<span id="orderText"></span>
+				</div>
+			 </a>
+		</div>
+		<div class='square-box' style="float:left;">
+			<a href="" id="openWaiterPopUp" data-rel="popup" data-transition="pop">
+				<div class='square-content'><br /><img src="img/food58.png" width="50%" alt=""  style="opacity:0.5;"/><br /><br />
+				<!--  <span>Cheama un ospatar</span>  -->
+				<span id="callWaiterText"></span>
+				</div>
+			</a>
+		</div>
+		<div class='square-box' style="float:right;">
+			<a href=""  id="check">
+				<div class='square-content'><br />
+					<img src="img/currency2.png" width="50%" alt=""  style="opacity:0.5;"/><br /><br />
+						<span id="checkText"></span>
+						<!-- <span id="checkText">Solicita nota</span> -->
+				</div>
+			</a>
+		</div>
+			   
+	</div><!-- /content -->
+	
+	<!-- calling waiter popup start -->
+	<div data-role="popup"  data-close-btn="none"  id="waiterPopUp">
+		<div data-role="header">
+			<h1 id="callWaiterHeaderText"></h1>
+			<!-- <h1 id="callWaiterHeaderTeaxt">Cheama un ospatar</h1> -->
+		</div><!-- /header -->
+		<div role="main" class="ui-content" style="padding:10px; text-align:center;">   
+			<!-- <p>Un ospatar va ajunge la dumneavoastra in cel mai scurt timp.</p> -->
+			<p id="callWaiterMessageText"></p>
+			<p><a href="#main" id="calling" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left"></a></p>
+		</div><!-- /content -->
+	</div
+	<!-- calling waiter popup start -->
+	
+</div><!-- /page two -->
+

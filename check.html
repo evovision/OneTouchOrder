@@ -1,0 +1,48 @@
+<div data-role="page" id="check">
+
+    <div data-role="header" data-position="fixed" data-theme="b">
+        <a href="main.html" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext ui-btn-left" data-role="button" role="button">Back</a>
+        <h1>Notă</h1>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+        <ul style="display:none;">
+            <li data-icon="false" id="check_item_template" style="display:none;clear:both;">
+                <h2 class="check_item_name"></h2>
+                <div class="pricePerUnit check_item_price" style="float:left;"></div>
+                <div class="pricePerUnit check_item_total_price" style="float:right;"></div>
+            </li>
+        </ul>
+
+        <ul data-role="listview" id="check_list" data-inset="true">
+
+        </ul>
+    </div><!-- /content -->
+    <!-- thanks popup start -->
+    <div data-role="popup" id="checkThanksPopup">
+        <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+        <div data-role="header">
+            <h1 id="checkThanksPopupHeaderText"></h1>
+        </div><!-- /header  -->
+        <div role="main" class="ui-content" style="padding:10px; text-align:center;">
+            <p id="checkThanksPopupText"></p>
+        </div>
+    </div>
+    <!-- thanks popup finish -->
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-grid-b payBtn">
+            <div class="ui-block-a  cashBtn">
+                <div class="label">CASH</div>
+
+            </div>
+            <div class="ui-block-b cardBtn">
+                <div class="label">CARD</div>
+
+            </div>
+            <div class="ui-block-c check_total"></div>
+
+        </div>
+    </div><!-- /footer -->
+
+</div>
+

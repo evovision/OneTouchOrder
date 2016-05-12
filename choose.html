@@ -1,0 +1,58 @@
+<div data-role="page" id="choose">
+
+    <div data-role="header" class="ui-header" data-position="fixed" data-theme="b">
+        <a href="#" data-rel="back" class="ui-btn ui-nodisc-icon ui-icon-carat-l ui-btn-icon-notext ui-btn-left" data-role="button" role="button">Back</a>
+        <h1>Feluri principale</h1>
+        <a href="orders.html" class="basket" id="basket_icon">
+            <img src="img/new/basket.png" alt="" width="20" height="20"/>
+            <span class="ordersNo" style="display:none;"></span>
+        </a>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content" id="list">
+        <div class="ui-grid-solo category_header" id="category_template" style="display:none;">
+            <div class="ui-block-a">
+                <span class="category_name"></span>
+            </div>
+        </div>
+        <div class="ui-grid-solo product" id="product_template" style="display:none;">
+            <div class="ui-block-a">
+                <img src="img/new/main.png" alt="" />
+                <div class="captions">
+                    <div class="label">
+                        <span class="product_title"></span>
+                        <div class="sub-label">
+                            <span class="product_desc"></span>
+                        </div>
+                    </div>
+                    <div class="price"></div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /content -->
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="main.html" id="menu" data-icon="menu" class="custom-btn"><span id="menuText"></span></a></li>
+                <li><a href="#" id="openWaiterPopUp" data-icon="waiter" class="custom-btn" data-rel="popup" data-transition="pop"><span id="callWaiterText"></span></a></li>
+                <li><a href="#" id="basket" data-icon="order" class="custom-btn"><span id="orderText"></span></a></li>
+                <li><a href="#" id="check"  data-icon="bill" class="custom-btn"><span id="checkText"></span></a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+    <!-- calling waiter popup start -->
+    <div data-role="popup"  data-close-btn="none"  id="waiterPopUp">
+        <div data-role="header">
+            <h1 id="callWaiterHeaderText"></h1>
+            <!-- <h1 id="callWaiterHeaderTeaxt">Cheama un ospatar</h1> -->
+        </div><!-- /header -->
+        <div role="main" class="ui-content" style="padding:10px; text-align:center;">
+            <!-- <p>Un ospatar va ajunge la dumneavoastra in cel mai scurt timp.</p> -->
+            <p id="callWaiterMessageText"></p>
+            <p><a href="#main" id="calling" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left"></a></p>
+        </div><!-- /content -->
+    </div>
+    <!-- calling waiter popup start -->
+</div>
+
