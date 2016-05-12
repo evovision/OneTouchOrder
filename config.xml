@@ -18,6 +18,10 @@
     <preference name="StatusBarBackgroundColor" value="#000000" />
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="FadeSplashScreen" value="false" />
+
+    <plugin name="cordova-plugin-device" source="npm" spec="1.0.0" />
+    <plugin name="cordova-plugin-device-motion" source="npm" spec="1.0.0" />
+    <plugin name="cordova-plugin-device-orientation" source="npm" spec="1.0.0" />
     <plugin name="cordova-plugin-transport-security" spec="0.1.2" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />
     <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />

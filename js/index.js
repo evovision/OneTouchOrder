@@ -69,7 +69,6 @@ var app = {
         console.log('Received Event: ' + id);
     },
     scan: function () {
-
         cordova.plugins.barcodeScanner.scan(
             function (result) {
                 console.log('ok');
