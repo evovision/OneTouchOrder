@@ -13,6 +13,7 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="orientation" value="portrait" />
+    <preference name="target-device" value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarStyle" value="blackopaque" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
@@ -61,7 +62,9 @@
         <splash height="1024" src="res/screen/ios/screen-ipad-portrait.png" width="768" />
         <splash height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
     </platform>
+
     <access origin="*" />
+    <plugin name="cordova-plugin-whitelist" version="1" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
