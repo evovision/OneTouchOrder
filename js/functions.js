@@ -596,6 +596,8 @@ function sendOrder(){
 		if((responseData.state != undefined) && (responseData.state == "invalid")){
 			//$.mobile.loading('hide');
 			window.localStorage.setArray("checkhistory", []);
+			basket = [];
+			checkHistoryArray = [];
 			changePage("ban.html");
 			setTimeout(function(){
 				console.log('exit2');
@@ -670,6 +672,7 @@ function sendCheck(payment) {
 		if ((responseData.state != undefined) && (responseData.state == "invalid")) {
 			//	$.mobile.loading('hide');
 			checkHistoryArray = [];
+			basket = [];
 			window.localStorage.setArray("checkhistory", []); //set array on ban
 			changePage("ban.html");
 			setTimeout(function () {
@@ -679,6 +682,7 @@ function sendCheck(payment) {
 			return;
 		} else if ((responseData.status != undefined) && (responseData.status == "valid")) {
 			checkHistoryArray = [];
+			basket = [];
 			window.localStorage.setArray("checkhistory", []); //set array
 
 			setTimeout(function () {
@@ -729,6 +733,7 @@ setInterval(function(){
 					console.log("responseData.state if: " + responseData.state);
 					//$.mobile.loading('hide');
 					checkHistoryArray = [];
+					basket = [];
 					window.localStorage.setArray("checkhistory", []); //set array on ban
 					changePage("one.html");
 					return;
