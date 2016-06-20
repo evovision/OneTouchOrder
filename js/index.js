@@ -42,6 +42,10 @@ var app = {
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
         navigator.splashscreen.hide();
+        document.addEventListener("backbutton", onBackKeyDown, false);
+        function onBackKeyDown() {
+            return false;
+        }
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {

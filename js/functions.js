@@ -115,9 +115,7 @@ function changePage(page){
 		}, 100);
 	}
 }
-$(document).on("backbutton", function(){
-	alert('back');
-});
+
 $(document).on('pagebeforehide', function(){
 	//$.mobile.loading('show');
 });
