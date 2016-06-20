@@ -93,7 +93,7 @@ var app = {
                         $.ajax({
                             type: 'POST',
                             //url: 'http://creativezone.ro/apk/form/get_app_data.php',
-                            url: 'http://82.76.210.88:8000/form/get_app_data.php',
+                            url: 'http://app.onetouchorder.ro/form/get_app_data.php',
                             timeout: 10000,
                             crossDomain: true,
                             data: {qrcode: qrCodeOK, uuid: uuid},

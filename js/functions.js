@@ -75,7 +75,7 @@ $(document).on("pageinit", function(){
 		//$.mobile.loading('show');
 		$.ajax({
 			type: 'POST',
-			url: 'http://82.76.210.88:8000/form/garcon.php',
+			url: 'http://app.onetouchorder.ro/form/garcon.php',
 			crossDomain: true,
 			data: {qrcode : qrCodeOK, uuid:uuid},
 			dataType: 'jsonp',
@@ -576,7 +576,7 @@ function sendOrder(){
 
 	$.ajax({
 		type: 'POST',
-		url: 'http://82.76.210.88:8000/form/place_order_app.php',
+		url: 'http://app.onetouchorder.ro/form/place_order_app.php',
 		crossDomain: true,
 		data: dataToSend,
 		dataType: 'jsonp',
@@ -656,7 +656,7 @@ function sendCheck(payment) {
 
 	$.ajax({
 		type: 'POST',
-		url: 'http://82.76.210.88:8000/form/req_tab.php',
+		url: 'http://app.onetouchorder.ro/form/req_tab.php',
 		crossDomain: true,
 		data: dataToSend,
 		dataType: 'jsonp',
@@ -721,7 +721,7 @@ setInterval(function(){
 		//$.mobile.loading('show');
 		$.ajax({
 			type: 'POST',
-			url: 'http://82.76.210.88:8000/form/get_status.php',
+			url: 'http://app.onetouchorder.ro/form/get_status.php',
 			crossDomain: true,
 			data: {qrcode : qrCodeOK, uuid:uuid},
 			dataType: 'jsonp',
